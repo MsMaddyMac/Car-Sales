@@ -4,8 +4,8 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 // component imports
 import { reducer } from './reducers';
-// import Header from './components/Header';
-// import AddedFeatures from './components/AddedFeatures';
+import Header from './components/Header';
+import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
@@ -28,8 +28,8 @@ const App = props => {
     <Provider store={store}>
       <div className="boxes">
       <div className="box">
-        {/* <Header car={props.car} />
-        <AddedFeatures car={props.car} /> */}
+        <Header car={props.car} />
+        <AddedFeatures car={props.car} />
       </div>
       <div className="box">
         <AdditionalFeatures additionalFeatures={props.additionalFeatures} />
