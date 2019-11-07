@@ -18,14 +18,12 @@ const store = createStore(reducer);
 const App = props => {
   
 
-  const removeFeature = e => {
-    e.preventDefault();
-    props.removeFeature();
-  };
+  // const removeFeature = e => {
+  //   props.removeFeature();
+  // };
 
-  const buyItem = e => {
-    e.preventDefault();
-    props.buyItem();
+  const buyItem = item => {
+    props.buyItem(item);
   };
 
   return (
@@ -36,7 +34,7 @@ const App = props => {
         <AddedFeatures car={props.car} />
       </div>
       <div className="box">
-        <AdditionalFeatures additionalFeatures={props.additionalFeatures} />
+        <AdditionalFeatures buyItem={buyItem} additionalFeatures={props.additionalFeatures} />
         <Total car={props.car} additionalPrice={props.additionalPrice} />
       </div>
       </div>

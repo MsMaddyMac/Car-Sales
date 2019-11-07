@@ -21,12 +21,15 @@ export const reducer = (state = initialState, action) => {
     switch(action.type) {
         case BUY_ITEM:
             return {
-                ...state.car,
-                features: [...state.features, action.payload]
+                ...state,
+                car: {
+                  ...state.car,
+                  features: [...state.car.features, action.payload]
+                }
             };
         case REMOVE_FEATURE:
             return {
-                ...state.car,
+                ...state,
                 features: [...state.features.filter(item => !item)]
             }
         default:
