@@ -3,6 +3,7 @@ import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 // component imports
+import { removeFeature, buyItem } from './actions';
 import { reducer } from './reducers';
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
@@ -11,17 +12,20 @@ import Total from './components/Total';
 
 
 
+
 const store = createStore(reducer);
 
 const App = props => {
   
 
-  const removeFeature = item => {
-    // dispatch an action here to remove an item
+  const removeFeature = e => {
+    e.preventDefault();
+    props.removeFeature();
   };
 
-  const buyItem = item => {
-    // dipsatch an action here to add an item
+  const buyItem = e => {
+    e.preventDefault();
+    props.buyItem(feature);
   };
 
   return (

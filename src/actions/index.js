@@ -1,5 +1,5 @@
 export const BUY_ITEM = "BUY_ITEM";
-export const REMOVE_ITEM = "REMOVE_ITEM"
+export const REMOVE_FEATURE = "REMOVE_FEATURE"
 
 export const buyItem = (feature) => {
     return {
@@ -8,9 +8,9 @@ export const buyItem = (feature) => {
     };
 };
 
-export const removeItem = (feature) => {
+export const removeFeature = (feature) => {
     return {
-        type: REMOVE_ITEM,
+        type: REMOVE_FEATURE,
         payload: feature
     };
 };
