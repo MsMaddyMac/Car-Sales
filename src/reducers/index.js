@@ -1,3 +1,5 @@
+import { BUY_ITEM } from "../actions";
+
 const initialState = {
     additionalPrice: 0,
     car: {
@@ -17,6 +19,11 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch(action.type) {
+        case BUY_ITEM:
+            return {
+                ...state,
+                car: {...state.features, action:payload}
+            }
         default:
             return state;
     }
