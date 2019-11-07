@@ -22,10 +22,14 @@ export const reducer = (state = initialState, action) => {
         case BUY_ITEM:
             return {
                 ...state,
+                additionalPrice: (state.additionalPrice + action.payload.price),
                 car: {
                   ...state.car,
                   features: [...state.car.features, action.payload]
-                }
+                },
+                additionalFeatures: state.additionalFeatures.filter((feature) => {
+                  return feature.id !== action.payload.id
+                })
             };
         case REMOVE_FEATURE:
             return {
