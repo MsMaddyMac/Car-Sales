@@ -25,7 +25,7 @@ const App = props => {
 
   const buyItem = e => {
     e.preventDefault();
-    props.buyItem(feature);
+    props.buyItem();
   };
 
   return (
